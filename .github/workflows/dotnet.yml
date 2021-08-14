@@ -27,5 +27,5 @@ jobs:
     - name: Build Inventory.Service
       run: dotnet build --no-restore
       working-directory: ./Play.Inventory/src/Play.Inventory.Service/
-    #- name: Test
-     # run: dotnet test --no-build --verbosity normal
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
