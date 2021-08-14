@@ -1,31 +1,31 @@
-name: .NET
+# name: .NET
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+# on:
+#   push:
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies for Catalog.Service
-      run: dotnet restore ./Play.Catalog/src/Play.Catalog.Service/
-    - name: Build Catalog.Service
-      run: dotnet build --no-restore
-      working-directory: ./Play.Catalog/src/Play.Catalog.Service/
-    - name: Restore dependencies for Inventory.Service
-      run: dotnet restore ./Play.Inventory/src/Play.Inventory.Service/
-    - name: Build Inventory.Service
-      run: dotnet build --no-restore
-      working-directory: ./Play.Inventory/src/Play.Inventory.Service/
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Setup .NET
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: 5.0.x
+#     - name: Restore dependencies for Catalog.Service
+#       run: dotnet restore ./Play.Catalog/src/Play.Catalog.Service/
+#     - name: Build Catalog.Service
+#       run: dotnet build --no-restore
+#       working-directory: ./Play.Catalog/src/Play.Catalog.Service/
+#     - name: Restore dependencies for Inventory.Service
+#       run: dotnet restore ./Play.Inventory/src/Play.Inventory.Service/
+#     - name: Build Inventory.Service
+#       run: dotnet build --no-restore
+#       working-directory: ./Play.Inventory/src/Play.Inventory.Service/
+#     - name: Test
+#       run: dotnet test --no-build --verbosity normal
