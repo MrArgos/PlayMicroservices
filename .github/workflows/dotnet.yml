@@ -18,12 +18,16 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies for Catalog.Service
-      run: dotnet restore .\Play.Catalog\src\Play.Catalog.Service\
+      run: dotnet restore 
+      working-directory: .\Play.Catalog\src\Play.Catalog.Service\
     - name: Build Catalog.Service
-      run: dotnet build .\Play.Catalog\src\Play.Catalog.Service\ --no-restore
+      run: dotnet build --no-restore
+      working-directory: .\Play.Catalog\src\Play.Catalog.Service\
     - name: Restore dependencies for Inventory.Service
-      run: dotnet restore .\Play.Catalog\src\Play.Catalog.Service\
+      run: dotnet restore
+      working-directory: .\Play.Inventory\src\Play.Catalog.Inventory\
     - name: Build Inventory.Service
-      run: dotnet build .\Play.Inventory\src\Play.Catalog.Inventory\ --no-restore
+      run: dotnet build --no-restore
+      working-directory: .\Play.Inventory\src\Play.Catalog.Inventory\
     #- name: Test
      # run: dotnet test --no-build --verbosity normal
