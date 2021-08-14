@@ -23,9 +23,9 @@ jobs:
       run: dotnet build --no-restore
       working-directory: ./Play.Catalog/src/Play.Catalog.Service/
     - name: Restore dependencies for Inventory.Service
-      run: dotnet restore ./Play.Inventory/src/Play.Catalog.Inventory/
+      run: dotnet restore ./Play.Inventory/src/Play.Inventory.Service/
     - name: Build Inventory.Service
       run: dotnet build --no-restore
-      working-directory: ./Play.Inventory/src/Play.Catalog.Inventory/
+      working-directory: ./Play.Inventory/src/Play.Inventory.Service/
     #- name: Test
      # run: dotnet test --no-build --verbosity normal
